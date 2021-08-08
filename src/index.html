@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <title>Todo</title>
+</head>
+  <body>
+    <header class="wrapper"><h1>ToDo List</h1></header>
+    <div class="main">
+      <div class="container">
+        <div class="todo_list">
+          <ul class="todo_main">
+            <li class="todo_items" data-part="root">
+              <div class="text-space">
+                <p class="js-data-pare-text todo_items">Поспать</p>
+                <p class="js-data-pare-date todo_items">2021-09-12</p>
+                <p class="js-data-pare-time todo_items">13:56</p>
+              </div>
+              <div class="btn-space">
+                <button class="btn btn-del"></button>
+                <button class="btn btn-edit"></button>
+                <button class="btn btn-finish"></button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <button class="js-modal-open btn-add"></button>
+      </div>
+    </div>
+    <div class="modal">
+        <div class="modal__dialog">
+          <div class="modal__dialog modal__dialog-body">
+              <h3>Задание:</h3>
+              <input type="text" max="200" class="adder-task">
+              <h3>Время:</h3>
+              <input type="date" class="adder-date">
+              <input type="time" class="adder-date-time">
+          </div>
+          <div class="modal__dialog modal__dialog-footer">
+            <div class="btn__modal btn__modal-adds">Добавить</div>
+            <div class="js-modal-close btn__modal btn__modal-close">Закрыть</div>
+          </div>
+        </div>  
+    </div>
+    <div class="modaledit">
+      <div class="modaledit__dialog">
+        <div class="modaledit__dialog modaledit__dialog-body">
+            <h3>Задание:</h3>
+            <input type="text" class="adder-task">
+            <h3>Время:</h3>
+            <input type="date" class="adder-date">
+            <input type="time" class="adder-date-time">
+        </div>
+        <div class="modaledit__dialog modaledit__dialog-footer">
+          <div class="btn__modaledit btn__modaledit-save">Сохранить</div>
+          <div class="js-modaledit-close btn__modaledit btn__modaledit-close">Закрыть</div>
+        </div>
+      </div>  
+  </div>
+  </body>
+</html>
