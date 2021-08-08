@@ -10,24 +10,22 @@
   <body>
     <header class="wrapper"><h1>ToDo List</h1></header>
     <div class="main">
-      <div class="container">
-        <div class="todo_list">
-          <ul class="todo_main">
-            <li class="todo_items" data-part="root">
-              <div class="text-space">
-                <p class="js-data-pare-text todo_items">Поспать</p>
-                <p class="js-data-pare-date todo_items">2021-09-12</p>
-                <p class="js-data-pare-time todo_items">13:56</p>
-              </div>
-              <div class="btn-space">
-                <button class="btn btn-del"></button>
-                <button class="btn btn-edit"></button>
-                <button class="btn btn-finish"></button>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <button class="js-modal-open btn-add"></button>
+      <div class="todos">
+        <ul class="todos__list">
+          <li class="todo__items" data-part="root">
+            <div class="text-space">
+              <p class="js-data-pare-text">Посdsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaпать</p>
+              <p class="js-data-pare-date">2021-09-12</p>
+              <p class="js-data-pare-time">13:56</p>
+            </div>
+            <div class="btn-space">
+              <button class="js-delete-btn btn btn-del"></button>
+              <button class="js-edit-btn btn btn-edit"></button>
+              <button class="js-finish-btn btn btn-finish"></button>
+            </div>
+          </li>
+        </ul>
+        <button class="js-modal-open todos__btn-add"></button>
       </div>
     </div>
     <div class="modal">
@@ -40,8 +38,8 @@
               <input type="time" class="adder-date-time">
           </div>
           <div class="modal__dialog modal__dialog-footer">
-            <div class="btn__modal btn__modal-adds">Добавить</div>
-            <div class="js-modal-close btn__modal btn__modal-close">Закрыть</div>
+            <button class="btn__modal btn__modal-adds">Добавить</button>
+            <button class="js-modal-close btn__modal btn__modal-close">Закрыть</button>
           </div>
         </div>  
     </div>
@@ -55,8 +53,8 @@
             <input type="time" class="adder-date-time">
         </div>
         <div class="modaledit__dialog modaledit__dialog-footer">
-          <div class="btn__modaledit btn__modaledit-save">Сохранить</div>
-          <div class="js-modaledit-close btn__modaledit btn__modaledit-close">Закрыть</div>
+          <button class="btn__modaledit btn__modaledit-save">Сохранить</button>
+          <button class="js-modaledit-close btn__modaledit btn__modaledit-close">Закрыть</button>
         </div>
       </div>  
   </div>

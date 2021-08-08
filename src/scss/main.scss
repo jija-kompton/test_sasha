@@ -14,10 +14,15 @@ body {
 }
 
 input {
-    padding:10px;
-    margin:10px 0;
+    padding: 10px;
+    margin: 10px 0;
 }
 
+p{
+    margin: 5px;
+    display: inline;
+    overflow-wrap: anywhere;
+}
 
 ul{
     padding: 0;
@@ -34,17 +39,38 @@ ul{
     padding: 30px 0 0 0;
 }
 
-.container{
+.todos{
     position: relative;
     display: flex;
     justify-content: center;
     max-width: 750px;
     width: 100%;
+
+    &__item{
+        border-radius: 10px;
+        height: 100%;
+        background-color: #fff;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+    }
+    
+    &__btn-add{
+        position: absolute;
+        top: 100%;
+        cursor: pointer;
+        height: 48px;
+        width: 48px;
+        border: 0;
+        background: transparent;
+        margin: 10px;
+        background-image: url(../img/add.png)
+    }
 }
 
-.todo_items{
+.todo__items{
     border-radius: 10px;
-    height: 100%;
     background-color: #fff;
     align-items: center;
     display: flex;
@@ -54,26 +80,22 @@ ul{
 
 .text-space{
 
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 300px;
+
     &-finish{
     transition: 2s;
     text-decoration: line-through;
     }
 }
 
-.btn-add{
-    position: absolute;
-    top: 100%;
-    cursor: pointer;
-    height: 48px;
-    width: 48px;
-    border: 0;
-    background: transparent;
-    margin: 10px;
-    background-image: url(../img/add.png)
-}
 
 .btn-space{
-    width: 172px;
+    width: 180px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .btn{
@@ -82,7 +104,6 @@ ul{
     width: 24px;
     border: 0;
     background: transparent;
-    margin: 0 15px;
 
     &-del{
         background-image: url(../img/del2.png);
