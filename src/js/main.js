@@ -1,7 +1,7 @@
 import '../scss/main.scss';
 
 const CLASS_LIST = {
-    MODAL: 'modal',
+    MODAL: 'js-modal',
     MODALEDIT: 'modaledit',
     MODALEDIT_ACTIVE: 'modaledit--active',
     MODAL_ACTIVE: 'modal--active',
@@ -10,9 +10,8 @@ const CLASS_LIST = {
     TRIGGER_CLOSE_EDIT: 'js-modaledit-close'
 };
 
-const addButton = document.querySelector('.btn__modal-adds'),
-      todolist = document.querySelector('.todos__list'),
-      saveEdit = document.querySelector('.btn__modaledit-save'),
+const addButton = document.querySelector('.js-modal-add'),
+      saveEdit = document.querySelector('.js-editsave'),
       removeButton = document.querySelectorAll('.js-delete-btn'),
       finishButton = document.querySelectorAll('.js-finish-btn'),
       editButton = document.querySelectorAll('.js-edit-btn');
@@ -28,7 +27,7 @@ removeButton.forEach(button => button.addEventListener('click', deletetest));
 const finishtest =  (event) =>{
     const currentTask = event.target.closest('[data-part="root"]');
     console.log(currentTask);
-    currentTask.querySelector('.text-space').classList.toggle("text-space-finish")
+    currentTask.querySelector('.js-text-space').classList.toggle("text-space-finish")
 };
 
 const finishTask = finishButton.forEach(button => button.addEventListener('click', finishtest));
@@ -44,9 +43,9 @@ const edittest =  (event) => {
     const modal = document.querySelector('.modaledit');
     modal.classList.add(CLASS_LIST.MODALEDIT_ACTIVE);
 
-    let inputText = modal.querySelector('.adder-task'),
-        inputDate = modal.querySelector('.adder-date'),
-        InputTime = modal.querySelector('.adder-date-time');
+    let inputText = modal.querySelector('.js-adder-task'),
+        inputDate = modal.querySelector('.js-adder-date'),
+        InputTime = modal.querySelector('.js-adder-date-time');
 
     inputText.value = textTask.textContent;
     inputDate.value = dateTask.textContent;
@@ -77,7 +76,7 @@ document.addEventListener('click', (event) =>{
             event.preventDefault();
 
             const target = event.target.closest(`.${CLASS_LIST.TRIGGER_OPEN}`);
-            const modal = document.querySelector('.modal');
+            const modal = document.querySelector('.js-modal');
 
             modal.classList.add(CLASS_LIST.MODAL_ACTIVE);
         }
@@ -91,9 +90,9 @@ document.addEventListener('click', (event) =>{
 
         modal.classList.remove(CLASS_LIST.MODAL_ACTIVE);
 
-        document.querySelector('.adder-task').value = "";
-        document.querySelector('.adder-date').value = "";
-        document.querySelector('.adder-date-time').value = "";
+        document.querySelector('.js-adder-task').value = "";
+        document.querySelector('.js-adder-date').value = "";
+        document.querySelector('.js-adder-date-time').value = "";
         
     }
     if (event.target.closest(`.${CLASS_LIST.TRIGGER_CLOSE_EDIT}`) ||
@@ -110,18 +109,18 @@ document.addEventListener('click', (event) =>{
 
 addButton.addEventListener ('click', ()=>{
 
-    if (document.querySelector('.adder-task').value.length == 0 ||
-        document.querySelector('.adder-date').value.length == 0 ||
-        document.querySelector('.adder-date-time').value.length == 0) alert ('Заполните поля')
+    if (document.querySelector('.js-adder-task').value.length == 0 ||
+        document.querySelector('.js-adder-date').value.length == 0 ||
+        document.querySelector('.js-adder-date-time').value.length == 0) alert ('Заполните поля')
     else{
     
     const item = document.createElement('li');
     item.classList.add('todo__items');
     item.setAttribute("data-part", "root");
-    item.insertAdjacentHTML('beforeend',`<div class="text-space">
-    <p class="js-data-pare-text">${document.querySelector('.adder-task').value}</p>
-    <p class="js-data-pare-date">${document.querySelector('.adder-date').value}</p>
-    <p class="js-data-pare-time">${document.querySelector('.adder-date-time').value}</p>
+    item.insertAdjacentHTML('beforeend',`<div class="js-text-space text-space">
+    <p class="js-data-pare-text">${document.querySelector('.js-adder-task').value}</p>
+    <p class="js-data-pare-date">${document.querySelector('.js-adder-date').value}</p>
+    <p class="js-data-pare-time">${document.querySelector('.js-adder-date-time').value}</p>
     </div>
     <div class="btn-space">
     <button class="js-delete-btn btn btn-del"></button>
@@ -136,9 +135,9 @@ addButton.addEventListener ('click', ()=>{
     document.querySelector('ul').append(item);
 
 
-    document.querySelector('.adder-task').value = "";
-    document.querySelector('.adder-date').value = "";
-    document.querySelector('.adder-date-time').value = "";
+    document.querySelector('.js-adder-task').value = "";
+    document.querySelector('.js-adder-date').value = "";
+    document.querySelector('.js-adder-date-time').value = "";
 
     const modal = event.target.closest(`.${CLASS_LIST.MODAL_ACTIVE}`);
 
